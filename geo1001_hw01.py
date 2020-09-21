@@ -1,15 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 #-- GEO1001.2020--hw01
 #-- [Haoyang Dong] 
 #-- [5302501]
-
-
-# In[3]:
 
 
 # import libraries
@@ -32,7 +23,6 @@ from scipy import mean
 from scipy.stats import ttest_ind
 
 
-# In[4]:
 
 
 # constant definition
@@ -45,7 +35,7 @@ sensor_color = ['#32d3eb', '#5bc49f', '#feb64d', '#ff7c7c', '#9287e7']
 confidence = 0.95
 
 
-# In[5]:
+
 
 
 # functions
@@ -74,7 +64,7 @@ def HEAT_mean_var_std(dataframe):
     return mean_list, var_list, std_list
 
 
-# In[6]:
+
 
 
 # name dataframe
@@ -86,7 +76,7 @@ for i in sensor_label:
     names['HEAT_'+i+'_df'] = Load_HEAT(names.get('file_'+i))
 
 
-# In[7]:
+
 
 
 # ----------------------------------------------------------------------------------------------------
@@ -96,7 +86,7 @@ for ii in sensor_label:
     names['mean_list_'+ii], names['var_list_'+ii], names['std_list_'+ii] = HEAT_mean_var_std(names.get('HEAT_'+ii+'_df'))
 
 
-# In[12]:
+
 
 
 # print the values in a table (use prettytable)
@@ -112,7 +102,7 @@ print(Table)
 #         print(column_name_list[iii+1], '&', j, '&', round(names.get('mean_list_'+j)[iii],3), '&', round(names.get('var_list_'+j)[iii],3), '&', round(names.get('std_list_'+j)[iii],3), '\\\\')
 
 
-# In[13]:
+
 
 
 # ----------------------------------------------------------------------------------------------------
@@ -138,7 +128,7 @@ for i_4 in range(10):
 plt.show()
 
 
-# In[24]:
+
 
 
 # ----------------------------------------------------------------------------------------------------
@@ -155,7 +145,7 @@ plt.tick_params(labelsize=fs)
 plt.show()
 
 
-# In[177]:
+
 
 
 # ----------------------------------------------------------------------------------------------------
@@ -193,7 +183,7 @@ for bplot in (bplot1, bplot2, bplot3):
 plt.show()
 
 
-# In[39]:
+
 
 
 # ----------------------------------------------------------------------------------------------------
@@ -257,7 +247,6 @@ ax[1][1].legend(loc = 'best')
 plt.show()
 
 
-# In[42]:
 
 
 # ----------------------------------------------------------------------------------------------------
@@ -289,7 +278,6 @@ for i_8 in range(5):
 plt.show()
 
 
-# In[172]:
 
 
 # ----------------------------------------------------------------------------------------------------
@@ -400,7 +388,7 @@ ax[1][1].set_title('Pearson and Spearman correlation coefficient of Wind Directi
 ax[1][1].legend(loc = 'best')
 
 
-# In[204]:
+
 
 
 # ----------------------------------------------------------------------------------------------------
@@ -458,8 +446,6 @@ ax[1].set_title('CDF for the 5 sensors Wind Speed values')
 ax[1].legend(loc = 'best')
 
 
-# In[214]:
-
 
 confidence_intervals_temp =[]
 confidence_intervals_ws =[]
@@ -479,7 +465,6 @@ dataframe_A41 = pd.DataFrame({'Sensor':sensor_label,'95% confidence intervals of
 dataframe_A41.to_csv('confidence_intervals.csv',index=False,sep=',')
 
 
-# In[223]:
 
 
 # ----------------------------------------------------------------------------------------------------
@@ -502,7 +487,7 @@ for i_14 in list([('E', 'D'), ('D', 'C'), ('C', 'B'), ('B', 'A')]):
     print('\n')
 
 
-# In[339]:
+
 
 
 # ----------------------------------------------------------------------------------------------------
