@@ -1,0 +1,2 @@
+# GEO1001.2020--hw01
+Homework 01 for GEO1001
